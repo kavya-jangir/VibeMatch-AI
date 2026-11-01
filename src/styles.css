@@ -1,0 +1,1878 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #403b46;
+  background: #fffaf7;
+  font-synthesis: none;
+
+  --ink: #403b46;
+  --muted: #8f8791;
+  --lavender: #eee8fb;
+  --purple: #78609e;
+  --pink: #f9e6e4;
+  --line: #eee7e3;
+  --white: #fff;
+  --shadow: 0 20px 55px rgba(115, 87, 110, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  width: 100%;
+  background:
+    radial-gradient(circle at 80% 10%, #f7eefb 0, transparent 24%), #fffaf7;
+  overflow-x: clip;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: min(1160px, calc(100% - 64px));
+  margin: 0 auto;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.brand span {
+  color: #967db4;
+  font-weight: 500;
+}
+
+nav {
+  display: flex;
+  gap: 31px;
+  margin-left: auto;
+}
+
+nav a {
+  color: #9a929b;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--ink);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-button {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1;
+  padding: 3px;
+}
+
+.buddy-link {
+  border: 1px solid #dfd2e6;
+  border-radius: 99px;
+  background: #fff;
+  color: #705887;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 17px;
+}
+
+/* =========================
+   MAIN & HERO SECTION
+========================= */
+
+main {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.hero {
+  width: min(1160px, calc(100% - 64px));
+  margin: 42px auto 20px;
+  min-height: 490px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero-copy {
+  padding-bottom: 24px;
+  max-width: 550px;
+}
+
+.eyebrow,
+.kicker {
+  color: #a487ac;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #de9ba5;
+  box-shadow: 0 0 0 5px #fae9e7;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #3e3944;
+  font-size: clamp(48px, 6.5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -3.5px;
+}
+
+.hero h1 i,
+.details-copy h1 {
+  font-family: 'Playfair Display', serif;
+  color: #896da5;
+  font-weight: 500;
+}
+
+.hero-copy > p {
+  max-width: 440px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 26px 0 32px;
+}
+
+.primary-button,
+.find-button {
+  border: 0;
+  background: #8c6fac;
+  color: white;
+  border-radius: 99px;
+  padding: 16px 23px;
+  font-weight: 700;
+  box-shadow: 0 12px 25px rgba(140, 111, 172, 0.23);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.primary-button:hover,
+.find-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(140, 111, 172, 0.3);
+}
+
+.primary-button span,
+.find-button span {
+  margin-left: 8px;
+}
+
+/* Hero Artwork */
+
+.hero-art {
+  min-height: 420px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sun-disc {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #eee6fa, #fbe7e4);
+  position: absolute;
+  right: 70px;
+  top: 34px;
+}
+
+.hero-ticket {
+  z-index: 1;
+  width: 225px;
+  height: 280px;
+  padding: 32px 25px;
+  transform: rotate(7deg);
+  background: #fff;
+  border: 1px solid #f1e9ee;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.hero-ticket:before {
+  content: '✦';
+  font-size: 20px;
+  color: #d28c9e;
+}
+
+.hero-ticket span,
+.hero-ticket small {
+  color: #a699a4;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-ticket strong {
+  color: #655476;
+  font:
+    500 29px/1.12 'Playfair Display',
+    serif;
+}
+
+.hero-ticket strong i {
+  color: #c88698;
+}
+
+.hero-sticker {
+  z-index: 2;
+  position: absolute;
+  bottom: 56px;
+  right: 62px;
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  background: #f2d5d5;
+  color: #a7657b;
+  text-align: center;
+  padding-top: 13px;
+  transform: rotate(-12deg);
+  font-size: 23px;
+}
+
+.hero-sticker small {
+  font-size: 10px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sparkle {
+  position: absolute;
+  color: #bd94be;
+  font-size: 28px;
+}
+
+.sparkle-one {
+  top: 55px;
+  right: 38px;
+}
+
+.sparkle-two {
+  bottom: 66px;
+  left: 74px;
+  font-size: 44px;
+  color: #e0afb3;
+}
+
+/* =========================
+   VIBE SECTION
+========================= */
+
+.vibe-section {
+  background: linear-gradient(
+    180deg,
+    rgba(240, 233, 251, 0.42),
+    rgba(255, 250, 247, 0)
+  );
+  padding: 86px 20px 95px;
+}
+
+.section-heading h2,
+.page-header h1 {
+  color: #443e4b;
+  font-size: 34px;
+  letter-spacing: -1.3px;
+  margin: 10px 0 9px;
+}
+
+.section-heading p,
+.page-header p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.center {
+  text-align: center;
+}
+
+.vibe-card {
+  width: min(870px, 100%);
+  margin: 38px auto 0;
+  background: rgba(255, 255, 255, 0.87);
+  border: 1px solid #f1e9ed;
+  border-radius: 20px;
+  padding: 36px 42px 28px;
+  box-shadow: var(--shadow);
+}
+
+.question {
+  padding: 3px 0 22px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1eaed;
+}
+
+.question-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.question-title > span {
+  color: #c39bb0;
+  font:
+    500 17px 'Playfair Display',
+    serif;
+}
+
+.question-title p {
+  color: #4f4855;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.question-title small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Choices */
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.choice {
+  border: 1px solid #e8dce9;
+  background: #fffdfc;
+  color: #756a77;
+  border-radius: 99px;
+  padding: 11px 14px;
+  font-size: 12px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.choice:hover {
+  border-color: #cdb8db;
+  background: #f8f2fb;
+  color: #705887;
+  transform: translateY(-1px);
+}
+
+.choice.selected {
+  background: #eee4f7;
+  border: 1.5px solid #9474ad;
+  color: #634b78;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(120, 96, 158, 0.1);
+}
+
+.choice b {
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  margin-left: 7px;
+  color: #8e6eaa;
+}
+
+.choice.selected b {
+  color: #80609a;
+  font-weight: 800;
+}
+
+/* Preferences */
+
+.more-preferences {
+  margin-top: 0;
+  border-top: 1px solid transparent;
+}
+
+.more-trigger {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #806a91;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 0 15px;
+}
+
+.more-trigger small {
+  color: #b3a9b0;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.preference-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  background: #fdf8f6;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 22px;
+}
+
+.preference-grid label {
+  color: #897b86;
+  display: grid;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.preference-grid select {
+  color: #62566a;
+  background: #fff;
+  border: 1px solid #eee4e8;
+  border-radius: 7px;
+  padding: 9px;
+  font-size: 12px;
+  outline: none;
+}
+
+/* Buttons */
+
+.find-button {
+  display: block;
+  margin: 25px auto 0;
+  box-shadow: 0 6px 16px rgba(140, 111, 172, 0.16);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.find-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(140, 111, 172, 0.2);
+}
+
+/* Loading */
+
+.loading-state {
+  text-align: center;
+  padding: 31px 0 4px;
+}
+
+.loading-orbit {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 13px;
+  border: 1px solid #dbcbe5;
+  border-top-color: #9874ad;
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+  display: grid;
+  place-items: center;
+}
+
+.loading-orbit span {
+  color: #b886a9;
+  animation: spin 1.3s linear reverse infinite;
+}
+
+.loading-state p {
+  color: #6d5c75;
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.loading-state small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   VIBE PAGE
+========================= */
+
+.vibe-page {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 65px 0 90px;
+  min-height: 75vh;
+}
+
+.vibe-page .page-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.vibe-page .page-header h1 {
+  font-size: 42px;
+  margin-top: 12px;
+}
+
+.vibe-page .page-header p {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Progress */
+
+.vibe-progress {
+  width: min(420px, 90%);
+  margin: 35px auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.vibe-progress span {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #f4eef6;
+  color: #b0a4b3;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #eee5ee;
+  flex-shrink: 0;
+}
+
+.vibe-progress span.active {
+  background: #8c6fac;
+  color: white;
+  border-color: #8c6fac;
+}
+
+.vibe-progress div {
+  height: 1px;
+  width: 70px;
+  background: #e9dfe9;
+}
+
+/* Vibe card */
+
+.vibe-page .vibe-card {
+  margin-top: 0;
+  max-width: 870px;
+  padding-bottom: 28px;
+}
+
+/* Navigation */
+
+.vibe-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 2px;
+}
+
+.vibe-navigation .find-button {
+  margin: 0 0 0 auto;
+}
+
+.vibe-navigation .text-button {
+  margin: 0;
+  color: #806494;
+}
+
+.text-button {
+  border: 0;
+  background: transparent;
+  color: #806494;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+.text-button:hover,
+.vibe-navigation .text-button:hover {
+  color: #624976;
+}
+
+/* Result page */
+
+.vibe-page .recommendations {
+  padding: 25px 0 0;
+}
+
+.vibe-page .recommendation-grid {
+  margin-top: 35px;
+}
+
+.vibe-result-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+  gap: 20px;
+}
+
+/* Step 2 options */
+
+.vibe-page .time-choices,
+.vibe-page .choices {
+  min-height: auto;
+}
+
+.vibe-page .time-choices .choice {
+  flex: 1 1 0;
+  min-width: 150px;
+  text-align: center;
+}
+
+/* =========================
+   RECOMMENDATION MOVIE CARDS
+========================= */
+
+.recommendation-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+  align-items: stretch;
+}
+
+.recommendation-item {
+  min-width: 0;
+  width: 100%;
+}
+
+.recommendation-item .movie-card {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+/* Recommendation posters */
+
+.recommendation-item .poster-wrap {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f5f0f5;
+}
+
+.recommendation-item .poster-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* =========================
+   DISCOVER MOVIE CARDS
+========================= */
+
+.compact-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+  align-items: stretch;
+}
+
+.compact-grid .movie-card {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(80, 60, 90, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.compact-grid .movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(80, 60, 90, 0.16);
+}
+
+/* Movie posters */
+
+.compact-grid .poster-wrap {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto !important;
+  overflow: hidden;
+  position: relative;
+  background: #f5f0f5;
+}
+
+.compact-grid .poster-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Movie information */
+
+.compact-grid .movie-card-body {
+  padding: 14px;
+}
+
+.compact-grid .movie-card-body h3 {
+  font-size: 16px;
+  margin: 0 0 7px;
+  line-height: 1.4;
+}
+
+.compact-grid .movie-card-body p {
+  font-size: 12px;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* Save button */
+
+.compact-grid .save-btn {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+/* =========================
+   DETAILS PAGE
+========================= */
+
+.details-page {
+  width: min(1100px, calc(100% - 64px));
+  margin: 50px auto;
+}
+
+.details-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.details-poster {
+  width: 280px;
+  max-width: 100%;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.details-poster img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.details-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.details-copy h1 {
+  font-size: 58px;
+  margin: 0;
+}
+
+.details-copy .overview {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 22px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 1000px) {
+  .compact-grid,
+  .recommendation-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .navbar {
+    width: calc(100% - 40px);
+  }
+
+  .hero {
+    width: calc(100% - 40px);
+  }
+}
+
+/* Tablets */
+
+@media (max-width: 700px) {
+  .navbar {
+    width: calc(100% - 28px);
+    gap: 12px;
+    min-height: 75px;
+  }
+
+  nav {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .hero {
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr;
+    margin-top: 25px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-copy > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eyebrow {
+    justify-content: center;
+  }
+
+  .hero-art {
+    min-height: 350px;
+  }
+
+  .sun-disc {
+    right: auto;
+  }
+
+  .hero-sticker {
+    right: 12%;
+  }
+
+  .vibe-page {
+    width: min(100% - 28px, 650px);
+    padding-top: 40px;
+  }
+
+  .vibe-page .page-header h1 {
+    font-size: 32px;
+  }
+
+  .vibe-progress {
+    margin: 25px auto;
+  }
+
+  .vibe-progress div {
+    width: 45px;
+  }
+
+  .vibe-page .vibe-card {
+    padding: 25px 20px 24px;
+  }
+
+  .vibe-page .question {
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+  }
+
+  .vibe-page .time-choices .choice {
+    flex: unset;
+    min-width: 0;
+  }
+
+  .vibe-navigation {
+    gap: 15px;
+    margin-top: 18px;
+  }
+
+  .vibe-page .find-button {
+    padding: 14px 18px;
+    font-size: 12px;
+  }
+
+  .vibe-result-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vibe-result-actions .text-button {
+    text-align: center;
+  }
+
+  .preference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-grid,
+  .recommendation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .details-page {
+    width: calc(100% - 32px);
+    margin-top: 30px;
+  }
+
+  .details-hero {
+    display: block;
+  }
+
+  .details-poster {
+    width: 200px;
+    margin-bottom: 28px;
+  }
+
+  .details-copy h1 {
+    font-size: 50px;
+  }
+
+  .details-copy .overview {
+    margin-top: 22px;
+  }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 470px) {
+  .navbar .brand {
+    font-size: 16px;
+  }
+
+  .buddy-link {
+    display: none;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .icon-button {
+    font-size: 23px;
+  }
+
+  .hero h1 {
+    font-size: 46px;
+    letter-spacing: -2px;
+  }
+
+  .hero-art {
+    min-height: 300px;
+  }
+
+  .hero-ticket {
+    width: 175px;
+    height: 220px;
+    padding: 25px 20px;
+  }
+
+  .hero-ticket strong {
+    font-size: 25px;
+  }
+
+  .question-title {
+    gap: 10px;
+  }
+
+  .choice {
+    padding: 10px 11px;
+  }
+
+  .vibe-page .vibe-card {
+    padding: 25px 16px 24px;
+  }
+
+  .compact-grid,
+  .recommendation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .compact-grid .movie-card {
+    border-radius: 12px;
+  }
+
+  .compact-grid .movie-card-body {
+    padding: 11px;
+  }
+
+  .compact-grid .movie-card-body h3 {
+    font-size: 14px;
+  }
+
+  .compact-grid .poster-wrap {
+    aspect-ratio: 2 / 3;
+  }
+
+  .recommendation-item .poster-wrap {
+    aspect-ratio: 2 / 3;
+  }
+
+  .details-poster {
+    width: 170px;
+  }
+
+  .details-copy h1 {
+    font-size: 42px;
+  }
+}
+
+/* Very small screens */
+
+@media (max-width: 350px) {
+  .compact-grid,
+  .recommendation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .vibe-progress {
+    gap: 7px;
+  }
+
+  .vibe-progress div {
+    width: 30px;
+  }
+}
+
+/* =========================
+   FINAL MOVIE POSTER FIX
+========================= */
+
+/* Discover section */
+.compact-grid {
+  width: min(1400px, calc(100% - 64px));
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 30px auto 60px;
+  align-items: stretch;
+}
+
+/* Movie cards */
+.compact-grid .movie-card {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+}
+
+/* Complete poster visible */
+.compact-grid .poster-wrap {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto !important;
+  overflow: hidden;
+  background: #f5f0f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compact-grid .poster-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center center;
+  display: block;
+}
+
+/* Movie details */
+.compact-grid .movie-card-body {
+  padding: 13px 14px 16px;
+}
+
+.compact-grid .movie-card-body h3 {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .compact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .compact-grid {
+    width: calc(100% - 32px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .compact-grid {
+    gap: 12px;
+  }
+}
+
+/* =====================================
+   VIBEMATCH FINAL UI FIX
+===================================== */
+
+/* Discover page */
+.inner-page {
+  width: min(1200px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 55px 0 90px;
+  min-height: 75vh;
+}
+
+.page-header {
+  margin-bottom: 38px;
+}
+
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+}
+
+.collection {
+  margin: 55px 0 65px;
+  width: 100%;
+}
+
+.collection-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.collection-title h2 {
+  margin: 0;
+  font-size: 25px;
+  color: #443e4b;
+  letter-spacing: -0.7px;
+}
+
+.collection-title p {
+  margin: 6px 0 0;
+  color: #968b98;
+  font-size: 13px;
+}
+
+/* Movie grid */
+.compact-grid {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.compact-grid .movie-card {
+  min-width: 0;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #f0e9ed;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(80, 60, 90, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.compact-grid .movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(80, 60, 90, 0.14);
+}
+
+/* Posters */
+.compact-grid .poster-wrap,
+.recommendation-item .poster-wrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto !important;
+  overflow: hidden;
+  background: #f5f0f5;
+}
+
+.compact-grid .poster-wrap img,
+.recommendation-item .poster-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center;
+}
+
+.poster-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+  text-align: center;
+  color: #806a91;
+  background: linear-gradient(145deg, #eee8fb, #f9e6e4);
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+}
+
+.type-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #705887;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* Movie information */
+.movie-card-body {
+  padding: 14px;
+}
+
+.movie-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.movie-card-heading h3 {
+  margin: 0 0 7px;
+  color: #443e4b;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.movie-card-body p {
+  color: #958a97;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 6px 0;
+}
+
+.save-button {
+  flex-shrink: 0;
+  border: 1px solid #e8dce9;
+  background: #fff;
+  color: #806494;
+  border-radius: 20px;
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.save-button:hover {
+  background: #f4edf8;
+}
+
+.rating {
+  color: #a77b43 !important;
+  font-weight: 700;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.tags span {
+  background: #f5eff8;
+  color: #806a91;
+  border-radius: 20px;
+  padding: 5px 8px;
+  font-size: 10px;
+}
+
+.streaming {
+  margin-top: 10px;
+  color: #8e8290;
+  font-size: 11px;
+}
+
+.streaming-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+/* Watchlist */
+.watchlist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 65px 20px;
+  color: #8f8791;
+}
+
+/* VibeBuddy floating button */
+.buddy {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 9999;
+}
+
+.buddy-fab {
+  width: 62px;
+  height: 62px;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9679b5, #c58ba9);
+  color: white;
+  font-size: 25px;
+  box-shadow: 0 8px 25px rgba(120, 96, 158, 0.3);
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s ease;
+}
+
+.buddy-fab:hover {
+  transform: scale(1.07);
+}
+
+.buddy-window {
+  position: absolute;
+  right: 0;
+  bottom: 76px;
+  width: 340px;
+  max-width: calc(100vw - 35px);
+  height: 450px;
+  max-height: calc(100vh - 120px);
+  background: #fff;
+  border: 1px solid #eee3ed;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(70, 50, 80, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.buddy-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  background: linear-gradient(120deg, #eee8fb, #f9e6e4);
+  color: #554662;
+}
+
+.buddy-head h3,
+.buddy-head p {
+  margin: 0;
+}
+
+.buddy-head h3 {
+  font-size: 15px;
+}
+
+.buddy-head p {
+  margin-top: 3px;
+  font-size: 11px;
+  color: #897b91;
+}
+
+.buddy-avatar {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  font-size: 20px;
+}
+
+.chat-messages {
+  flex: 1;
+  min-height: 0;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  padding: 11px 13px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: #eee6f7;
+  color: #5f4c70;
+}
+
+.chat-bubble.assistant {
+  align-self: flex-start;
+  background: #f8f3f2;
+  color: #554d59;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #eee7ed;
+}
+
+.chat-input input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #e8dce9;
+  border-radius: 20px;
+  padding: 11px 13px;
+  outline: none;
+  font-size: 12px;
+}
+
+.chat-input input:focus {
+  border-color: #a58abd;
+}
+
+.chat-input button {
+  border: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #8c6fac;
+  color: white;
+}
+
+/* Search and details */
+.large-search {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px 18px;
+  border: 1px solid #e8dce9;
+  border-radius: 30px;
+  background: white;
+  outline: none;
+}
+
+.result-count {
+  color: #958a97;
+  font-size: 13px;
+  margin: 15px 0;
+}
+
+.details-back {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #806494;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #897b86;
+  font-size: 13px;
+}
+
+.credit-line {
+  color: #958a97;
+  font-size: 12px;
+}
+
+.why-picked,
+.mock-answer {
+  padding: 15px;
+  border-radius: 12px;
+  background: #f7f1f8;
+  color: #75657e;
+  line-height: 1.6;
+}
+
+.ask-vibe {
+  margin-top: 30px;
+}
+
+.quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ask-input {
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px;
+  border: 1px solid #e8dce9;
+  border-radius: 12px;
+}
+
+/* Loading */
+.poster-loading {
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+  color: #958a97;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .compact-grid,
+  .watchlist-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .inner-page {
+    width: calc(100% - 32px);
+    padding-top: 35px;
+  }
+
+  .collection {
+    margin: 38px 0 45px;
+  }
+
+  .collection-title h2 {
+    font-size: 21px;
+  }
+
+  .compact-grid,
+  .watchlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .buddy {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .buddy-fab {
+    width: 55px;
+    height: 55px;
+  }
+
+  .buddy-window {
+    width: min(340px, calc(100vw - 30px));
+  }
+}
+
+@media (max-width: 380px) {
+  .compact-grid,
+  .watchlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .movie-card-body {
+    padding: 10px;
+  }
+
+  .movie-card-heading h3 {
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   DISCOVER PAGE - LAYOUT FIX
+========================================= */
+
+/* Wider movie listing container */
+.inner-page {
+  width: min(1500px, calc(100% - 48px));
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 45px 0 80px;
+  overflow: visible;
+}
+
+/* Movie collection sections */
+.collection {
+  width: 100%;
+  margin: 42px 0 55px;
+  overflow: visible;
+}
+
+/* Movie grid - 4 cards on desktop */
+.compact-grid {
+  width: 100%;
+  max-width: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* Preserve existing movie card design */
+.compact-grid .movie-card {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .inner-page {
+    width: calc(100% - 40px);
+  }
+
+  .compact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .inner-page {
+    width: calc(100% - 28px);
+    padding-top: 30px;
+  }
+
+  .collection {
+    margin: 32px 0 42px;
+  }
+
+  .compact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 380px) {
+  .inner-page {
+    width: calc(100% - 22px);
+  }
+
+  .compact-grid {
+    gap: 10px;
+  }
+}
+
+/* =========================================
+   VIBEBUDDY - FLOATING BUTTON FIX
+========================================= */
+
+.buddy {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 99999 !important;
+  width: auto;
+  max-width: calc(100vw - 32px);
+  overflow: visible !important;
+  pointer-events: none;
+}
+
+.buddy-fab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 58px;
+  min-height: 58px;
+  max-width: 100%;
+  padding: 12px 17px;
+  border: none;
+  border-radius: 50px;
+  white-space: nowrap;
+  overflow: visible;
+  pointer-events: auto;
+  box-shadow: 0 8px 25px rgba(120, 96, 158, 0.28);
+}
+
+/* Keep the chat window above other content */
+.buddy-window {
+  position: absolute;
+  right: 0;
+  bottom: 76px;
+  z-index: 100000;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 115px);
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+/* Mobile positioning */
+@media (max-width: 700px) {
+  .buddy {
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+
+  .buddy-fab {
+    min-width: 54px;
+    min-height: 54px;
+    padding: 11px 15px;
+  }
+
+  .buddy-window {
+    width: min(340px, calc(100vw - 36px));
+    right: 0;
+    bottom: 68px;
+  }
+}
+
+@media (max-width: 380px) {
+  .buddy {
+    right: 12px !important;
+    bottom: 12px !important;
+  }
+
+  .buddy-window {
+    width: calc(100vw - 24px);
+  }
+}
+
+/* VibeBuddy - Full name visible */
+.buddy-fab {
+  width: auto !important;
+  min-width: 145px !important;
+  height: 58px !important;
+  padding: 12px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  border-radius: 50px !important;
+  font-size: 14px !important;
+  flex-shrink: 0 !important;
+}
+
+.buddy {
+  right: 24px !important;
+  bottom: 24px !important;
+  width: max-content !important;
+  overflow: visible !important;
+}
+
+@media (max-width: 700px) {
+  .buddy {
+    right: 16px !important;
+    bottom: 16px !important;
+  }
+
+  .buddy-fab {
+    min-width: 140px !important;
+  }
+}
